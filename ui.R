@@ -1,7 +1,6 @@
 ui <- dashboardPage(
   
   dashboardHeader(title = "Red protección SE"),
-  
   dashboardSidebar(useShinyjs(),
                    actionButton("Actualizar", inputId = "Actualizar"), 
                    sidebarMenu(
@@ -10,19 +9,16 @@ ui <- dashboardPage(
                      menuItem("Foliares", tabName = "foliares", icon = icon("leaf"))
                    )),
   dashboardBody(
-    
-    tabItems(
-      
+      tabItems(
       # First tab content
       tabItem(tabName = "home",
               h2("Red de protección sanitaria de trigo y cebada")
       ), 
-      
       # Second tab content
       tabItem(tabName = "terapicos",
-              
+              selectInput("regional", "Seleccione regional", 
+                          list("tandilia", "jmf", "necochea")),
               # Boxes need to be put in a row (or column)
-              
               fluidRow(
                 # box(infoBoxOutput("progressBox")),
                 # box(DTOutput("table")),
@@ -35,7 +31,4 @@ ui <- dashboardPage(
       # Third tab content
       tabItem(tabName = "foliares",
               h2("Foliares tab content")
-      )
-    )
-  )
-)
+      ))))

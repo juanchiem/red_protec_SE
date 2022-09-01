@@ -7,7 +7,7 @@
 
 # Packages
 pacman::p_load(
-  shiny, lubridate, shinydashboard,
+  shiny, lubridate, shinydashboard, gsheet,
   tidyverse, leaflet, DT, shinyjs,
   flextable
 )
